@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
-import "package:tkt/widgets/Greeting.dart";
-import "package:tkt/widgets/SIdeMenu.dart";
+import "package:tkt/widgets/category_widget.dart";
+import "package:tkt/widgets/greeting_widget.dart";
+import "package:tkt/widgets/sIdeMenu.dart";
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -15,8 +16,14 @@ class FirstPage extends StatelessWidget {
           style: TextStyle(color: Color(0xff6F7789)),
         ),
       ),
-      body: Column(
-        children: const [Greeting()],
+      body: ListView(
+        padding: EdgeInsets.only(left: 30),
+        children: const [
+          SizedBox(height: 50),
+          Greeting(),
+          SizedBox(height: 30),
+          CategorWidget()
+        ],
       ),
     );
   }
