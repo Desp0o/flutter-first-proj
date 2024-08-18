@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
-  const CardWidget({super.key});
+  final String destName;
+  final String image;
+  final double score;
+  final String desc;
+
+  const CardWidget(
+      {super.key,
+      required this.destName,
+      required this.image,
+      required this.score,
+      required this.desc});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +24,22 @@ class CardWidget extends StatelessWidget {
           color: Colors.white),
       child: Column(
         children: [
-          Center(child: Image.asset('assets/images/lake.png')),
+          Center(
+              child: ClipRRect(
+            borderRadius: BorderRadius.circular(13.0), // Set the border radius
+            child: Image.asset(
+              image,
+              width: 197,
+              height: 119,
+              fit: BoxFit.fill,
+            ),
+          )),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                "Ranu Kumbolo",
+                destName,
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
@@ -36,21 +55,22 @@ class CardWidget extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('4.9', style: TextStyle(color: Color(0xff6F7789)))
+                  Text(score.toStringAsFixed(1),
+                      style: TextStyle(color: Color(0xff6F7789)))
                 ],
               )
             ],
           ),
           SizedBox(height: 5),
           Row(
-            children: const [
+            children: [
               Icon(
                 Icons.location_on,
                 size: 18,
                 color: Color(0xffEE684A),
               ),
               Text(
-                "Lumajang, Jawa timur",
+                desc,
                 style: TextStyle(fontSize: 12, color: Color(0xff6f7789)),
               )
             ],

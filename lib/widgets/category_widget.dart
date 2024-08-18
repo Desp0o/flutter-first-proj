@@ -14,7 +14,6 @@ class _CategorWidgetState extends State<CategorWidget> {
   void updateFilter(String filter) {
     setState(() {
       _currentFilter = filter;
-      print(_currentFilter);
     });
   }
 
@@ -24,9 +23,49 @@ class _CategorWidgetState extends State<CategorWidget> {
     'Recommended',
   ];
 
+  final List<Map<String, dynamic>> _destinations = [
+    {
+      'image': "assets/images/lake.png",
+      'destName': "Ranu Kumbolo",
+      'score': 4.9,
+      'desc': "Lumajang, Jawa Timur"
+    },
+    {
+      'image': "assets/images/crater.jpg",
+      'destName': "Ijen Crater",
+      'score': 5.0,
+      'desc': "Banyuwangi, Jawa Timur"
+    },
+    {
+      'image': "assets/images/beach.jpg",
+      'destName': "Kuta Beach",
+      'score': 4.7,
+      'desc': "Bali, Indonesia"
+    },
+    {
+      'image': "assets/images/mountain.jpg",
+      'destName': "Mount Bromo",
+      'score': 4.8,
+      'desc': "East Java, Indonesia"
+    },
+    {
+      'image': "assets/images/temple.jpg",
+      'destName': "Borobudur Temple",
+      'score': 4.9,
+      'desc': "Magelang, Jawa Tengah"
+    },
+    {
+      'image': "assets/images/canyon.jpg",
+      'destName': "Raja Ampat",
+      'score': 5.0,
+      'desc': "West Papua, Indonesia"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: _filters
@@ -50,7 +89,28 @@ class _CategorWidgetState extends State<CategorWidget> {
                   ))
               .toList(),
         ),
-        CardWidget()
+        SizedBox(height: 26),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          child: Row(
+            children: _destinations
+                .map((item) => GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      children: [
+                        CardWidget(
+                          destName: item['destName'],
+                          image: item['image'],
+                          score: item['score'],
+                          desc: item['desc'],
+                        ),
+                        SizedBox(width: 18)
+                      ],
+                    )))
+                .toList(),
+          ),
+        )
       ],
     );
   }
