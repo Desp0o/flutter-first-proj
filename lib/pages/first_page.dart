@@ -9,6 +9,7 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffF6F6F6),
       drawer: SideMenu(),
       appBar: AppBar(
         title: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tkt/widgets/card_widget.dart';
 
 class CategorWidget extends StatefulWidget {
   const CategorWidget({super.key});
@@ -49,6 +50,7 @@ class _CategorWidgetState extends State<CategorWidget> {
                   ))
               .toList(),
         ),
+        CardWidget()
       ],
     );
   }
