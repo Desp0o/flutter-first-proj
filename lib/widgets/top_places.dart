@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tkt/pages/second_page.dart';
 import 'package:tkt/widgets/top_place_single_widget.dart';
 import 'package:tkt/arrays/destination_lists.dart';
 
@@ -13,7 +14,7 @@ class _TopPlacesState extends State<TopPlaces> {
   @override
   Widget build(BuildContext context) {
     void goToLocations() {
-      Navigator.pushNamed(context, '/second');
+      Navigator.pushNamed(context, SecondPage.route);
     }
 
     return Padding(

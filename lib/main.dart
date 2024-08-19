@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tkt/pages/first_page.dart';
-import 'package:tkt/pages/second_page.dart';
+import 'package:tkt/pages/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => FirstPage(), // Define the first page route
-        '/second': (context) => SecondPage(), // Define the second page route
-        // Add more routes as needed
-      },
+      home: FirstPage(),
+      routes: getRoutes(),
     );
   }
 }

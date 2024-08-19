@@ -4,6 +4,7 @@ import 'package:tkt/widgets/top_place_single_widget.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
+  static const String route = "locations";
 
   @override
   State<SecondPage> createState() => _SecondPageState();

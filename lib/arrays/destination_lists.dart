@@ -1,3 +1,6 @@
+import 'package:tkt/pages/first_page.dart';
+import 'package:tkt/pages/second_page.dart';
+
 final List<Map<String, dynamic>> europeDestinations = [
   {
     'image': "assets/images/eiffel_tower.webp",
@@ -188,8 +191,8 @@ final List<Map<String, dynamic>> allDestinationList = [
 ];
 
 final List<Map<String, dynamic>> botNavBar = [
-  {"icon": "assets/icons/home_icon.png", "path": "/"},
-  {"icon": "assets/icons/location_icon.png", "path": "/second"},
+  {"icon": "assets/icons/home_icon.png", "path": FirstPage.route},
+  {"icon": "assets/icons/location_icon.png", "path": SecondPage.route},
   {"icon": "assets/icons/chat_icon.png", "path": ""},
   {"icon": "assets/icons/profile_icon.png", "path": ""},
 ];

@@ -7,6 +7,7 @@ import 'package:tkt/widgets/top_places.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
+  static const String route = "home"; // Added 'const'
 
   @override
   State<FirstPage> createState() => _FirstPageState();
