@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:tkt/arrays/destination_lists.dart';
+import 'package:tkt/widgets/bottom_nav_bar.dart';
 import 'package:tkt/widgets/top_place_single_widget.dart';
 
 class SecondPage extends StatelessWidget {
@@ -29,7 +30,8 @@ class SecondPage extends StatelessWidget {
                       ),
                     ))
                 .toList(),
-          )
+          ),
+          CustomBottomBar()
         ],
       ),
     );

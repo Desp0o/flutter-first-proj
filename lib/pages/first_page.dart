@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tkt/widgets/bottom_nav_bar.dart';
 import 'package:tkt/widgets/category_widget.dart';
 import 'package:tkt/widgets/greeting_widget.dart';
 import 'package:tkt/widgets/sIdeMenu.dart';
 import 'package:tkt/widgets/top_places.dart';
-import 'package:tkt/arrays/destination_lists.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -43,31 +43,7 @@ class _FirstPageState extends State<FirstPage> {
               TopPlaces(),
             ],
           ),
-          Positioned(
-            bottom: 20,
-            left: 30,
-            right: 30,
-            child: Container(
-              padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-              height: 80,
-              decoration: BoxDecoration(
-                  color: Color(0xff000000),
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: botNavBar
-                    .map((element) => GestureDetector(
-                          onTap: () => goToLocations(element['path']),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Image.asset(element['icon'])],
-                          ),
-                        ))
-                    .toList(),
-              ),
-            ),
-          ),
+          CustomBottomBar()
         ],
       ),
     );
