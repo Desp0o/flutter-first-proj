@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
-class TopPlaceSingleWidget extends StatefulWidget {
-  final String title;
+class TopPlaceSingleWidget extends StatelessWidget {
+  final String placeTitle;
+  final String image;
   final double score;
   final String destination;
 
   const TopPlaceSingleWidget(
       {super.key,
-      required this.title,
+      required this.placeTitle,
+      required this.image,
       required this.score,
       required this.destination});
 
-  @override
-  State<TopPlaceSingleWidget> createState() => _TopPlaceSingleWidgetState();
-}
-
-class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +27,7 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(15)),
             child: Image.asset(
-              'assets/images/santorini.webp',
+              image,
               width: 86,
               height: 90,
               fit: BoxFit.cover,
@@ -41,7 +38,7 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.title,
+                placeTitle,
                 style: TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 18,
@@ -56,7 +53,7 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
                     color: Color(0xffEE684A),
                   ),
                   Text(
-                    widget.destination,
+                    destination,
                     style: TextStyle(
                         fontFamily: 'Poppins',
                         color: Color(0xff6F7789),
@@ -74,7 +71,7 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
                   ),
                   SizedBox(width: 5),
                   Text(
-                    widget.score.toStringAsFixed(1),
+                    score.toStringAsFixed(1),
                     style: TextStyle(
                         fontFamily: 'Poppins', color: Color(0xff6f7789)),
                   ),
