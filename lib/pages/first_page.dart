@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:tkt/widgets/category_widget.dart";
 import "package:tkt/widgets/greeting_widget.dart";
 import "package:tkt/widgets/sIdeMenu.dart";
+import "package:tkt/widgets/top_places.dart";
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -23,7 +24,9 @@ class FirstPage extends StatelessWidget {
           SizedBox(height: 50),
           Greeting(),
           SizedBox(height: 30),
-          CategorWidget()
+          CategorWidget(),
+          SizedBox(height: 30),
+          TopPlaces()
         ],
       ),
     );
