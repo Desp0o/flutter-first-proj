@@ -9,17 +9,33 @@ class CategorWidget extends StatefulWidget {
 }
 
 class _CategorWidgetState extends State<CategorWidget> {
-  String _currentFilter = 'All';
+  String _currentFilter = 'Asia';
+  List<Map<String, dynamic>> _choosenList = [];
 
   void updateFilter(String filter) {
     setState(() {
       _currentFilter = filter;
+      switch (_currentFilter) {
+        case 'Europe':
+          _choosenList = _europeDestination;
+          break;
+        case 'Asia':
+        default:
+          _choosenList = _destinations;
+          break;
+      }
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _choosenList = _destinations;
+  }
+
   final List<String> _filters = [
-    'All',
-    'Popular',
+    'Asia',
+    'Europe',
     'Recommended',
   ];
 
@@ -62,6 +78,33 @@ class _CategorWidgetState extends State<CategorWidget> {
     }
   ];
 
+  final List<Map<String, dynamic>> _europeDestination = [
+    {
+      'image': "assets/images/eiffel_tower.webp",
+      'destName': "Eiffel Tower",
+      'score': 4.9,
+      'desc': "Paris, France"
+    },
+    {
+      'image': "assets/images/colosseum.jpg",
+      'destName': "Colosseum",
+      'score': 5.0,
+      'desc': "Rome, Italy"
+    },
+    {
+      'image': "assets/images/santorini.webp",
+      'destName': "Santorini",
+      'score': 4.8,
+      'desc': "Santorini, Greece"
+    },
+    {
+      'image': "assets/images/alps.jpg",
+      'destName': "Swiss Alps",
+      'score': 4.9,
+      'desc': "Switzerland"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -94,7 +137,7 @@ class _CategorWidgetState extends State<CategorWidget> {
           scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
           child: Row(
-            children: _destinations
+            children: _choosenList
                 .map((item) => GestureDetector(
                     onTap: () {},
                     child: Row(
