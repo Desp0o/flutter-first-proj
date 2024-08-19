@@ -119,6 +119,7 @@ class _CategorWidgetState extends State<CategorWidget> {
                         Text(
                           filter,
                           style: TextStyle(
+                            fontFamily: 'Poppins',
                             color: _currentFilter == filter
                                 ? Color(0xffF36D72)
                                 : Color(0xff121212),

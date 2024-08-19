@@ -42,7 +42,10 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
             children: [
               Text(
                 widget.title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800),
               ),
               SizedBox(height: 10),
               Row(
@@ -54,7 +57,10 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
                   ),
                   Text(
                     widget.destination,
-                    style: TextStyle(color: Color(0xff6F7789), fontSize: 12),
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Color(0xff6F7789),
+                        fontSize: 12),
                   )
                 ],
               ),
@@ -69,7 +75,8 @@ class _TopPlaceSingleWidgetState extends State<TopPlaceSingleWidget> {
                   SizedBox(width: 5),
                   Text(
                     widget.score.toStringAsFixed(1),
-                    style: TextStyle(color: Color(0xff6f7789)),
+                    style: TextStyle(
+                        fontFamily: 'Poppins', color: Color(0xff6f7789)),
                   ),
                 ],
               )

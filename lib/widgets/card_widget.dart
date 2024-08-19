@@ -42,6 +42,7 @@ class CardWidget extends StatelessWidget {
                 destName,
                 style: TextStyle(
                     color: Colors.black,
+                    fontFamily: 'Poppins',
                     fontSize: 14,
                     fontWeight: FontWeight.bold),
               ),
@@ -56,7 +57,8 @@ class CardWidget extends StatelessWidget {
                     width: 5,
                   ),
                   Text(score.toStringAsFixed(1),
-                      style: TextStyle(color: Color(0xff6F7789)))
+                      style: TextStyle(
+                          fontFamily: 'Poppins', color: Color(0xff6F7789)))
                 ],
               )
             ],
@@ -71,7 +73,10 @@ class CardWidget extends StatelessWidget {
               ),
               Text(
                 desc,
-                style: TextStyle(fontSize: 12, color: Color(0xff6f7789)),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 12,
+                    color: Color(0xff6f7789)),
               )
             ],
           )
