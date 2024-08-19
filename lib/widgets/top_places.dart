@@ -12,6 +12,10 @@ class TopPlaces extends StatefulWidget {
 class _TopPlacesState extends State<TopPlaces> {
   @override
   Widget build(BuildContext context) {
+    void goToLocations() {
+      Navigator.pushNamed(context, '/second');
+    }
+
     return Padding(
       padding: const EdgeInsets.only(
           right: 30.0), // Adjust the right padding as needed
@@ -29,9 +33,7 @@ class _TopPlacesState extends State<TopPlaces> {
                     fontWeight: FontWeight.w600),
               ),
               GestureDetector(
-                onTap: () {
-                  // Add navigation or action for "View All" here
-                },
+                onTap: goToLocations,
                 child: const Text(
                   'View All',
                   style: TextStyle(
