@@ -5,8 +5,19 @@ import 'package:tkt/widgets/sIdeMenu.dart';
 import 'package:tkt/widgets/top_places.dart';
 import 'package:tkt/arrays/destination_lists.dart';
 
-class FirstPage extends StatelessWidget {
+class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  void goToLocations(path) {
+    setState(() {
+      Navigator.pushNamed(context, path);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +58,7 @@ class FirstPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: botNavBar
                     .map((element) => GestureDetector(
+                          onTap: () => goToLocations(element['path']),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [Image.asset(element['icon'])],

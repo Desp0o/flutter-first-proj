@@ -65,8 +65,8 @@ final List<Map<String, dynamic>> destinations = [
 ];
 
 final List<Map<String, dynamic>> botNavBar = [
-  {"icon": "assets/icons/home_icon.png", "path": ""},
-  {"icon": "assets/icons/location_icon.png", "path": ""},
+  {"icon": "assets/icons/home_icon.png", "path": "/"},
+  {"icon": "assets/icons/location_icon.png", "path": "/second"},
   {"icon": "assets/icons/chat_icon.png", "path": ""},
   {"icon": "assets/icons/profile_icon.png", "path": ""},
 ];
