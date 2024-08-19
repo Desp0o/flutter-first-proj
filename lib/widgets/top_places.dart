@@ -30,9 +30,13 @@ class TopPlaces extends StatelessWidget {
           SizedBox(height: 15),
           Column(
             children: [
-              TopPlaceSingleWidget(),
+              TopPlaceSingleWidget(
+                title: '1',
+                score: 4.2,
+                destination: '1',
+              ),
               SizedBox(height: 15),
-              TopPlaceSingleWidget()
+              TopPlaceSingleWidget(title: '1', score: 4.2, destination: '1')
             ],
           )
         ],
