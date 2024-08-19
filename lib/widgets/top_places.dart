@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tkt/widgets/top_place_single_widget.dart';
 
 class TopPlaces extends StatelessWidget {
   const TopPlaces({super.key});
@@ -9,6 +10,7 @@ class TopPlaces extends StatelessWidget {
       padding: const EdgeInsets.only(
           right: 30.0), // Adjust the left padding as needed
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,6 +27,14 @@ class TopPlaces extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(height: 15),
+          Column(
+            children: [
+              TopPlaceSingleWidget(),
+              SizedBox(height: 15),
+              TopPlaceSingleWidget()
+            ],
+          )
         ],
       ),
     );
