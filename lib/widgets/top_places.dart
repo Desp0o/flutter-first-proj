@@ -17,12 +17,18 @@ class TopPlaces extends StatelessWidget {
             children: [
               Text(
                 'Top Place',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600),
               ),
               RawGestureDetector(
                 child: Text(
                   'View All',
-                  style: TextStyle(color: Color(0xff121212), fontSize: 14),
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Color(0xff121212),
+                      fontSize: 14),
                 ),
               )
             ],
