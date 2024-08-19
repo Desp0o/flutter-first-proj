@@ -70,6 +70,10 @@ flutter:
     - assets/images/colosseum.jpg
     - assets/images/santorini.webp
     - assets/images/alps.jpg
+    - assets/icons/home_icon.png
+    - assets/icons/location_icon.png
+    - assets/icons/chat_icon.png
+    - assets/icons/profile_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
